@@ -1,8 +1,8 @@
 # Briz  PHP Framework
 
-> == Initial BETA Version. Your help is very much appreciated 
+>  Initial BETA Version. Your help is very much appreciated 
 >  if you find any issues other than security issues please use Github issue tracker.
->  for security issues see [Security](#security) ==
+>  for security issues see [Security](#security) 
 
 
 Briz is a simple but powerful PHP framework for creating web applications.You can Write powerful web applications with multiple faces. It is efficient for creating anything from simple API to Large web applications.
@@ -11,7 +11,7 @@ With Briz you can easily extend your web applications  from a simple API to larg
 
 ## Documentation
 
-You can find latest documentation at [github page](http://briz.readthedocs.org)
+You can find latest documentation at [Documentation page](http://briz.readthedocs.org)
 
 ## Installation
 
