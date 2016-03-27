@@ -1,0 +1,5 @@
+composer.lock
+phpunit.xml
+logs
+vendor
+nbproject
