@@ -15,10 +15,20 @@ You can find latest documentation at [Documentation page](http://briz.readthedoc
 
 ## Installation
 
-You can clone this repository or use composer
+You can clone this repository or use composer.
+
 ```bash
-$ composer require briz\briz "^0.3"
+$ composer create-project briz/briz target-dir
 ```
+
+this will create a copy of Briz at the location target-dir. edit it to match with your location.
+next point your web server root to the `www` directory.
+or run it in using PHP's built in Development server.
+```bash
+$ cd www
+$ php -S localhost:8000
+```
+now in your browser use `localhost:8000` to access the website
 
 ## Basic Usage
 
