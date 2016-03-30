@@ -13,7 +13,7 @@ use Briz\Http\Collections\Interfaces\ServerParamsInterface;
  * HTTP Request class
  * based on PSR 7
  */
-class Request extends message implements ServerRequestInterface
+class Request extends Message implements ServerRequestInterface
 {
 
     /**
