@@ -82,13 +82,18 @@ class LoadDefaults
                 $header[substr($name, 5)] = $value;
             }
         }
-        $header['CONTENT_TYPE'] = $server->get('CONTENT_TYPE');
-        $header['CONTENT_LENGTH'] = $server->get('CONTENT_LENGTH');
+        if(!isset($header['CONTENT_TYPE'])){
+            $header['CONTENT_TYPE'] = $server->get('CONTENT_TYPE');
+        }
+        if(!isset($header['CONTENT_TYPE'])){
+            $header['CONTENT_LENGTH'] = $server->get('CONTENT_LENGTH');
+        }
         $header['PHP_AUTH_USER'] = $server->get('PHP_AUTH_USER');
         $header['PHP_AUTH_PW'] = $server->get('PHP_AUTH_PW');
         $header['PHP_AUTH_DIGEST'] = $server->get('PHP_AUTH_DIGEST');
         $header['AUTH_TYPE'] = $server->get('AUTH_TYPE');
         $headers = new Headers($header);
+        
         //body
         $body = fopen('php://temp', 'w+');
         stream_copy_to_stream(fopen('php://input', 'r'), $body);

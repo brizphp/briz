@@ -25,7 +25,10 @@ class ParsedView extends BaseView
             //check if the file exits in parent directory
             if (!file_exists($file_name)) {
                 if (null === $this->inherit->$name->parent) {
-                    throw new \InvalidArgumentException(sprintf("View file '%s' not found in %s", $this->file, $file_name));
+                    throw new \InvalidArgumentException(
+                        sprintf("View file '%s' not found in %s", 
+                            $this->file,
+                            $this->rootDir.'/'.$this->viewDir.'/'.$name));
                 }
                 $name = $this->inherit->$name->parent;
                 $this->setFile($this->rootDir, $this->viewDir, $name, $this->file);
