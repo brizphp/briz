@@ -53,6 +53,7 @@ class App
         $this->container['framework'] = $this;
         $this->container['root_dir'] = $rootdir;
         $this->container['inherit'] = new \stdClass();
+        $this->container['container'] = $this->container;
         $config = require_once('config.php');
         $configDir = ($this->container->has('config_dir')) ? $this->container->get('config_dir') : $rootdir . '/config';
         if ($this->container->has('config')) {

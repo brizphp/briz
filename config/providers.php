@@ -35,5 +35,10 @@
      // default logger is monolog.
      // parameters 'root_dir','app' and 'log_dir' from container is passed to it.
      'logger'    => 'Briz\Helpers\LoadHelpers@logger@root_dir@log_dir@app',
+     
+     //request method faking since most browsers can only send GET and POST
+     //its value is will be null if no method changed otherwise it will be original request method.
+     'FakeMethod' => 'Briz\Helpers\LoadHelpers@fakeMethod@request@fake_method@container'
+     
     
  ];

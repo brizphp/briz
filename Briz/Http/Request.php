@@ -173,7 +173,7 @@ class Request extends Message implements ServerRequestInterface
         if (!isset($this->validMethods[$method])) {
             throw new \InvalidArgumentException("Unsupported HTTP method. \"{$method}\" provided.");
         }
-        return $method;
+        return strtoupper($method);
     }
 
     /**
@@ -407,7 +407,7 @@ class Request extends Message implements ServerRequestInterface
         }
         if (!is_array($this->parsedBody) and ! is_object($this->parsedBody)) {
             $this->parsedBody = false;
-            throw new \RuntimeException('the registered parser should only return null or object or array ');
+            throw new \RuntimeException('the registered parser should only return null, object or array ');
         }
         return $this->parsedBody;
     }
