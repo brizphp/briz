@@ -14,7 +14,7 @@ abstract class Identity implements IdentityInterface
     /**
      * The system level container
      * 
-     * @var ContainerInterface
+     * @var Interop\Container\ContainerInterface
      */
     protected $container;
 

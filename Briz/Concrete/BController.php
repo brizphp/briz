@@ -17,7 +17,7 @@ abstract class BController
     
     /**
      *
-     * @var Psr\Http\Request 
+     * @var Psr\Http\Message\ServerRequestInterface
      */
     protected $request;
     

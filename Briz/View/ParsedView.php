@@ -27,7 +27,7 @@ class ParsedView extends BaseView
                 if (null === $this->inherit->$name->parent) {
                     throw new \InvalidArgumentException(
                         sprintf("View file '%s' not found in %s", 
-                            $this->file,
+                            $this->file.'.view.php',
                             $this->rootDir.'/'.$this->viewDir.'/'.$name));
                 }
                 $name = $this->inherit->$name->parent;
