@@ -19,7 +19,7 @@ class BridgeRoutes
     /**
      * @var Interop\Container\ContainerInterface 
      */
-    protected $container;
+    public $container;
 
     /**
      * @var Psr\Http\Message\ServerRequestInterface

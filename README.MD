@@ -37,15 +37,17 @@ require './vendor/autoload.php';
 $app = new Briz\App();
 
 $app->route("web", function($router){
-
+	//Route HTTP GET '/'
     $router->get('/',function($b){
 		   $b->response->write('hello world');
-    }
+    });
+    //Route HTTP GET '/{anyname}' it will math with
+    // anything like /briz and /haseeb etc.
     $router->get('/{name}',function($b){
     	$data = 'hello'.$b->args['name'];
     	$b->response->write($data);
-    }
-}
+    });
+});
 $app->run();
 ```
 
