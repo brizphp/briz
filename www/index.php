@@ -27,18 +27,19 @@ $app->route("web", function($router){
 });
 
 /**
- | next router is mobile
- | mobile is a child of web intended to work as json API.
- | it will render everything in web that uses renderer as JSON.
- | last parameter 'web' is parent name.
+ | next router is 'mobile'
+ | mobile is a child of 'web' intended to work as a json API.
+ | it will render everything in 'web' as JSON.
+ | last parameter 'web' in this method is parent name.
  **/
 $app->route('mobile',function($router){
 	
 	// Identify using header identity.
-	// if a header With X-Request-Cli with value android encountered then it will use this router
+	// if a header With 'X-Request-Cli' with value 'mobile' encountered then it will use this router
 	$router->identify('header','X-Request-Cli','mobile');
 	
-	//now the responses will be rendererd as json
+    //use json renderer
+	//responses will be rendererd as json
     $router->setRenderer('JsonView');
 },'web');
 

@@ -10,10 +10,25 @@ You can find latest documentation at [Documentation page](http://briz.readthedoc
 
 ## Installation
 
-You can clone this repository or use composer.
+You can clone this repository or use composer directly. you will need composer to install depandancies.
+
+Method 1
+--------
+
+run the following command
 
 ```bash
 $ composer create-project briz/briz target-dir
+```
+
+Method 2
+-------
+
+ 1. clone or download this from github
+ 2. run the following in console,
+ 
+```bash
+ $ composer install
 ```
 
 this will create a copy of Briz at the location target-dir. edit it to match with your location.
