@@ -1,9 +1,9 @@
 {
     "name": "briz/briz",
-    "type": "library",
+    "type": "project",
     "description": "Briz framework for php",
-    "keywords": ["framework","api","router"],
-    "homepage": "http://briz.readthedocs.org",
+    "keywords": ["framework","api","router","briz"],
+    "homepage": "http://briz.readthedocs.io",
     "license": "MIT",
     "authors": 
         [

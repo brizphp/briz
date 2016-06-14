@@ -21,7 +21,7 @@ $app->route("web", function($router){
 		// values 'title' , 'content' and 'link'
         $briz->renderer('hello',['title'=>'Welcome to Briz Framework',
             'content'=>'Thanks for using Briz Framework. You can Learn More at Our Documentaion Page ',
-            'link'=>'http://briz.readthedocs.org/en/latest/'
+            'link'=>'http://briz.readthedocs.io/en/latest/'
             ]);
       });
 });
