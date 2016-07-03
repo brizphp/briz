@@ -6,7 +6,7 @@ With Briz you can easily extend your web applications  from a simple API to larg
 
 ## Documentation
 
-You can find latest documentation at [Documentation page](http://briz.readthedocs.org)
+You can find latest documentation at [Documentation page](http://briz.readthedocs.io)
 
 ## Installation
 
@@ -66,7 +66,7 @@ $app->route("web", function($router){
 $app->run();
 ```
 
-If you want to create bigger websites Briz has views and controllers. more details at [Documentation Page](http://briz.readthedocs.org)
+If you want to create bigger websites Briz has views and controllers. more details at [Documentation Page](http://briz.readthedocs.io)
 
 ## Features
 
@@ -79,7 +79,7 @@ It is a new way for identifying things. Together with route inheritance it makes
 - ### Fully built on PSR-7
 This project was started with full PSR-7 support in mind. Briz can run with any PSR-7 Implementations or Adapters.
 
-more on [Documentation Page](http://briz.readthedocs.org)
+more on [Documentation Page](http://briz.readthedocs.io)
 
 ## Feature Requests
 
