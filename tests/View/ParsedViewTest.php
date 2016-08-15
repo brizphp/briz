@@ -17,7 +17,7 @@ class ParsedViewTest extends \PHPUnit_Framework_TestCase
     {
         $string = '<?php echo $name;';
         self::$folder = './tmp_View';
-        if(is_dir(self::$folder)){
+        if (is_dir(self::$folder)) {
             self::$folder = self::$folder.'ygduasguasgfyagsf';
         }
         mkdir(self::$folder);
@@ -49,7 +49,8 @@ class ParsedViewTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class Render extends \Briz\View\ParsedView{
+class Render extends \Briz\View\ParsedView
+{
     public $viewPath;
     public $file;
 }

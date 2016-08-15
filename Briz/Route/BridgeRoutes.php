@@ -61,7 +61,7 @@ class BridgeRoutes
         ContainerInterface $container,
         $rendererCallable = null,
         array $args = []
-    ){
+    ) {
         if ($container->has('request') and $container->has('response')) {
             $this->name = $name;
             $this->container = $container;
@@ -139,5 +139,4 @@ class BridgeRoutes
         $response->setHeader('location', $url);
         return $response;
     }
-
 }

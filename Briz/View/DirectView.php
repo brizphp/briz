@@ -23,5 +23,4 @@ class DirectView extends BaseView
         }
         return $this->response;
     }
-
 }

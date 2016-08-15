@@ -124,14 +124,13 @@ trait IdentityTrait
     {
         $identifiers = $this->container->get('id');
         $identity = $identifiers->get($name);
-        if(null === $identity){
+        if (null === $identity) {
             return true;
         }
         if (null === $key) {
             return $identity->checkByComponent(__CLASS__);
         } else {
-            return $identity->checkByKey(__CLASS__,$key);
+            return $identity->checkByKey(__CLASS__, $key);
         }
     }
-
 }

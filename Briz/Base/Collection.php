@@ -1,13 +1,15 @@
 <?php
 namespace Briz\Base;
 
+use Briz\Base\Interfaces\CollectionInterface;
+
 /**
  * Collection
  * 
  * Used to store collection of data in key value pairs.
  * and various operations on the collection
  */
-class Collection
+class Collection implements CollectionInterface
 {
 
     /**
@@ -149,5 +151,4 @@ class Collection
 
         return $this;
     }
-
 }

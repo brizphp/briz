@@ -3,7 +3,7 @@
  * 
  * 
  */
-namespace Briz\Tests\Route;
+namespace Briz\tests\Route;
 
 /**
  * Description of RouteTest
@@ -27,14 +27,13 @@ class RouteTest extends \PHPUnit_Framework_TestCase
         $route = $this->route->dispatch('rend', 'get', '/b');
         $this->assertTrue($route[1]);
         $route = $this->route->dispatch('rend', 'post', '/b');
-        $this->assertFalse($route[1]); 
+        $this->assertFalse($route[1]);
     }
     
     public function testRouteConflict()
     {
         $this->setExpectedException('\FastRoute\BadRouteException');
-        $this->route->addRoute('get', '/a','and');
+        $this->route->addRoute('get', '/a', 'and');
         $this->route->addRoute('get', '/a', 'foo');
     }
-
 }

@@ -3,7 +3,6 @@ namespace MyApp\Controllers;
 
 use Briz\Concrete\BController;
 
-
 /**
  * Errors Controller.
  *
@@ -42,21 +41,21 @@ class ErrorsController extends BController
     /**
      * Error Handler.
      */
-    public function errorHandler($severity, $message, $filepath, $line,$code='')
+    public function errorHandler($severity, $message, $filepath, $line, $code='')
     {
-         if(!empty($code)){
+        if (!empty($code)) {
             $this->response = $this->response->withStatus($code);
-         }
+        }
 
-         return $this->renderer(
+        return $this->renderer(
              'errors',
-             ['severity' => $severity,'message' => $message,'filepath'=> $filepath, 'line' => $line]
+             ['severity' => $severity, 'message' => $message, 'filepath'=> $filepath, 'line' => $line]
          );
     }
     
     public function exceptionHandler($exception)
     {
         $this->response = $this->response->withStatus('500');
-        return $this->renderer('exception',['exception' => $exception]);
+        return $this->renderer('exception', ['exception' => $exception]);
     }
 }

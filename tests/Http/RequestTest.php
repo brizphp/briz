@@ -4,7 +4,7 @@
  * 
  * 
  */
-namespace Briz\Tests\Http;
+namespace Briz\tests\Http;
 
 /**
  * Description of RequestTest
@@ -108,7 +108,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
     public function testRegisterParser()
     {
-        $callable = function() {
+        $callable = function () {
             return ["helloworld"];
         };
         $request = $this->getRequest('POST', json_encode(['a' => 'b']));
@@ -180,5 +180,4 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $request = $request->withoutAttribute('foo');
         $this->assertEquals(['new' => 'value'], $request->getAttributes());
     }
-
 }

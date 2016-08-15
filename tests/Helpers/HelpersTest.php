@@ -4,7 +4,7 @@
  * 
  * 
  */
-namespace Briz\Tests\Helpers;
+namespace Briz\tests\Helpers;
 
 /**
  * Description of testHelpers
@@ -23,9 +23,9 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
         $uri = new \Briz\Http\Uri();
         $headers = new \Briz\Http\Collections\Headers(['content-type'=>'application/json']);
         $server = new \Briz\Http\Collections\ServerParams();
-        $request = new \Briz\Http\Request('GET',$uri,$headers,$body,$server,[]);
+        $request = new \Briz\Http\Request('GET', $uri, $headers, $body, $server, []);
         $container['request'] = $request;
-        \Briz\Helpers\LoadHelpers::fakeMethod($request, 'X-Http-Method-Override',$container);
+        \Briz\Helpers\LoadHelpers::fakeMethod($request, 'X-Http-Method-Override', $container);
         $request = $container->get('request');
         $this->assertEquals('PUT', $request->getMethod());
     }
@@ -40,9 +40,9 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
         $uri = new \Briz\Http\Uri();
         $headers = new \Briz\Http\Collections\Headers(['content-type'=>'application/json']);
         $server = new \Briz\Http\Collections\ServerParams();
-        $request = new \Briz\Http\Request('GET',$uri,$headers,$body,$server,[]);
+        $request = new \Briz\Http\Request('GET', $uri, $headers, $body, $server, []);
         $container['request'] = $request;
-        \Briz\Helpers\LoadHelpers::fakeMethod($request, 'X-Http-Method-Override',$container);
+        \Briz\Helpers\LoadHelpers::fakeMethod($request, 'X-Http-Method-Override', $container);
         $request = $container->get('request');
         $this->assertEquals('GET', $request->getMethod());
     }
@@ -56,9 +56,9 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
         $headers = new \Briz\Http\Collections\Headers();
         $headers->set('X-Http-Method-Override', 'put');
         $server = new \Briz\Http\Collections\ServerParams();
-        $request = new \Briz\Http\Request('GET',$uri,$headers,$body,$server,[]);
+        $request = new \Briz\Http\Request('GET', $uri, $headers, $body, $server, []);
         $container['request'] = $request;
-        \Briz\Helpers\LoadHelpers::fakeMethod($request, 'X-Http-Method-Override',$container);
+        \Briz\Helpers\LoadHelpers::fakeMethod($request, 'X-Http-Method-Override', $container);
         $request = $container->get('request');
         $this->assertEquals('PUT', $request->getMethod());
     }
@@ -72,9 +72,9 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
         $headers = new \Briz\Http\Collections\Headers();
         $headers->set('X-Http-Method-Override', 'lalalalala');
         $server = new \Briz\Http\Collections\ServerParams();
-        $request = new \Briz\Http\Request('GET',$uri,$headers,$body,$server,[]);
+        $request = new \Briz\Http\Request('GET', $uri, $headers, $body, $server, []);
         $container['request'] = $request;
-        \Briz\Helpers\LoadHelpers::fakeMethod($request, 'X-Http-Method-Override',$container);
+        \Briz\Helpers\LoadHelpers::fakeMethod($request, 'X-Http-Method-Override', $container);
         $request = $container->get('request');
         $this->assertEquals('GET', $request->getMethod());
     }

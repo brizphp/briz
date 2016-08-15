@@ -60,5 +60,4 @@ class File
     {
         return file_exists($file);
     }
-
 }

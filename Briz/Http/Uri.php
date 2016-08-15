@@ -68,8 +68,7 @@ class Uri implements UriInterface
      */
     public function __construct(
     $scheme = "", $host = "", $path = "", $query = "", $fragment = "", $port = null, $user = "", $password = ''
-    )
-    {
+    ) {
         $this->checkScheme($scheme);
         $this->checkHost($host);
         $this->checkPort($port);
@@ -370,7 +369,7 @@ class Uri implements UriInterface
         if ($port === null) {
             return true;
         }
-        if (!(is_numeric($port) && $port >= 1 && $port <= 65535 )) {
+        if (!(is_numeric($port) && $port >= 1 && $port <= 65535)) {
             throw new \InvalidArgumentException('Invalid Port');
         }
         return true;
@@ -528,5 +527,4 @@ class Uri implements UriInterface
                 ($query ? '?' . $query : '') .
                 ($fragment ? '#' . $fragment : '');
     }
-
 }

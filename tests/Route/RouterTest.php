@@ -3,7 +3,7 @@
  * 
  * 
  */
-namespace Briz\Tests\Route;
+namespace Briz\tests\Route;
 
 /**
  * Description of RouterTest
@@ -28,7 +28,7 @@ class RouterTest extends \PHPUnit_Framework_TestCase
         $c->setAccessible(true);
         $c->setValue($this->router, $this->container);
         $pl->setAccessible(true);
-        $pl->invoke($this->router,false, []);
+        $pl->invoke($this->router, false, []);
         $this->container['routes']->set('test', $this->router);
     }
     
@@ -73,7 +73,7 @@ class RouterTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('/hello', $data[0]['OPTIONS']);
     }
 
-        public function testAny()
+    public function testAny()
     {
         $this->router->any('/hello', 'callback');
         $data = $this->container->get('route_collector')->get('_Router_test')->getData();
@@ -125,16 +125,16 @@ class RouterTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Briz\Route\BridgeRoutes', $briz);
     }
     
-    protected function setupIdentify($t1 = true,$t2=true)
+    protected function setupIdentify($t1 = true, $t2=true)
     {
         $mock = $this->getMockBuilder('Briz\Beam\HeaderIdentity');
         $identity = $mock->getMock();
         $identity->method('checkByComponent')->willReturn($t1);
         $this->container['id'] = new \Briz\Base\Collection();
-        $this->container->get('id')->set('header',$identity);
+        $this->container->get('id')->set('header', $identity);
         $identity2 = $this->getMockBuilder('Briz\Beam\HeaderIdentity')->getMock();
         $identity2->method('checkByComponent')->willReturn($t2);
-        $this->container->get('id')->set('another',$identity2);
+        $this->container->get('id')->set('another', $identity2);
     }
     
     public function testIdentifyNokey()
@@ -151,18 +151,18 @@ class RouterTest extends \PHPUnit_Framework_TestCase
         $this->router->identify(2);
     }
     
-     public function testIdentifyInvalid()
+    public function testIdentifyInvalid()
     {
         $this->setupIdentify();
         $this->setExpectedException('InvalidArgumentException');
-        $this->router->identify('i','j');
+        $this->router->identify('i', 'j');
     }
     
     public function testIdentify()
     {
-        $this->setupIdentify(true,true);
-        $this->router->identify('header','he','invalid');
-        $this->router->identify('another','he','invalid');
+        $this->setupIdentify(true, true);
+        $this->router->identify('header', 'he', 'invalid');
+        $this->router->identify('another', 'he', 'invalid');
         $array = $this->router->getIdentity();
         $this->assertArrayHasKey('header', $array);
         $this->assertTrue($this->router->checkIdentity());
@@ -170,11 +170,11 @@ class RouterTest extends \PHPUnit_Framework_TestCase
     
     public function testGetIdentity()
     {
-        $this->setupIdentify(true,false);
-        $this->router->identify('header','he','invalid');
-        $this->router->identify('header','help','invalid');
-        $this->router->identify('another','he','invalid');
-        $this->router->identify('another','j','k');
+        $this->setupIdentify(true, false);
+        $this->router->identify('header', 'he', 'invalid');
+        $this->router->identify('header', 'help', 'invalid');
+        $this->router->identify('another', 'he', 'invalid');
+        $this->router->identify('another', 'j', 'k');
         $this->assertArrayHasKey('header', $this->router->getIdentity());
         $this->assertArrayHasKey('another', $this->router->getIdentity());
         $this->assertCount(2, $this->router->getIdentity());
@@ -182,25 +182,25 @@ class RouterTest extends \PHPUnit_Framework_TestCase
 
     public function testheckIdentityFalse()
     {
-        $this->setupIdentify(true,false);
-        $this->router->identify('header','he','invalid');
-        $this->router->identify('another','he','invalid');
+        $this->setupIdentify(true, false);
+        $this->router->identify('header', 'he', 'invalid');
+        $this->router->identify('another', 'he', 'invalid');
         $this->assertFalse($this->router->checkIdentity());
     }
     
     public function testheckIdentityFalseTogle()
     {
-        $this->setupIdentify(false,true);
-        $this->router->identify('header','he','invalid');
-        $this->router->identify('another','he','invalid');
+        $this->setupIdentify(false, true);
+        $this->router->identify('header', 'he', 'invalid');
+        $this->router->identify('another', 'he', 'invalid');
         $this->assertFalse($this->router->checkIdentity());
     }
     
     public function testheckIdentityFalseAll()
     {
-        $this->setupIdentify(false,false);
-        $this->router->identify('header','he','invalid');
-        $this->router->identify('another','he','invalid');
+        $this->setupIdentify(false, false);
+        $this->router->identify('header', 'he', 'invalid');
+        $this->router->identify('another', 'he', 'invalid');
         $this->assertFalse($this->router->checkIdentity());
     }
     
@@ -210,5 +210,4 @@ class RouterTest extends \PHPUnit_Framework_TestCase
         $result = $this->router->run('GET', '\hello');
         $this->assertEquals('str', $result[1]);
     }
-    
 }

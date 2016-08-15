@@ -72,5 +72,4 @@ class Headers extends Collection implements HeadersInterface
     {
         return strtolower(preg_replace('/-/', '_', $header));
     }
-
 }

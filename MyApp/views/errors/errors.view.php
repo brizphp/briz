@@ -11,13 +11,13 @@
         <th align='left'>File</th><th align='left' style="width:15px;">Line</th><th align='left'>Function</th>
     </tr>
 <?php	foreach (debug_backtrace() as $error): ?>
-<?php		if (isset($error['file'])): ?>
+<?php	    if (isset($error['file'])): ?>
 	<tr style="border-spacing:5px;outline:1px solid #B12626;">
     <td><?php echo $error['file']; ?></td>
 	<td style="width:50px;"><?php echo $error['line']; ?></td>
 	<td style="min-width:250px;"><?php echo $error['function']; ?></td>
     </tr>
-<?php		endif ?>
+<?php	    endif ?>
 <?php	endforeach ?>
 </table>
 </body>

@@ -10,7 +10,7 @@ use Interop\Container\ContainerInterface;
  * througout the application.
  * you are free to store any values to it.
  */
-Class Container implements \ArrayAccess, ContainerInterface
+class Container implements \ArrayAccess, ContainerInterface
 {
 
     /**
@@ -103,5 +103,4 @@ Class Container implements \ArrayAccess, ContainerInterface
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-
 }

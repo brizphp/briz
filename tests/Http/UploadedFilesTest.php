@@ -4,24 +4,25 @@
  * 
  */
 
-namespace Briz\Tests\Http;
+namespace Briz\tests\Http;
 
 /**
  * Description of UploadedFilesTest
  *
  * @author haseeb
  */
-class UploadedFilesTest extends \PHPUnit_Framework_TestCase{
+class UploadedFilesTest extends \PHPUnit_Framework_TestCase
+{
     
     protected $files;
-    public static function setUpBeforeClass() 
+    public static function setUpBeforeClass()
     {
         $handle = fopen('./filesample.jpeg', 'w');
         fwrite($handle, "some_payload");
         fclose($handle);
     }
     
-    public function setUp() 
+    public function setUp()
     {
         $_FILES = array(
             'test' => array(
@@ -42,14 +43,15 @@ class UploadedFilesTest extends \PHPUnit_Framework_TestCase{
                 );
     }
 
-    public static function tearDownAfterClass() {
-        if(file_exists('./filesample.jpeg')){
+    public static function tearDownAfterClass()
+    {
+        if (file_exists('./filesample.jpeg')) {
             unlink('./filesample.jpeg');
         }
-        if(file_exists('./file1.txt')){
+        if (file_exists('./file1.txt')) {
             unlink('./file1.txt');
         }
-        if(file_exists('./file2.txt')){
+        if (file_exists('./file2.txt')) {
             unlink('./file2.txt');
         }
     }
@@ -109,7 +111,7 @@ class UploadedFilesTest extends \PHPUnit_Framework_TestCase{
     }
     public function testGetStreamMoved()
     {
-        $file = fopen('./file1.txt','w');
+        $file = fopen('./file1.txt', 'w');
         fwrite($file, 'hello');
         $file = new \Briz\Http\UploadedFile('./file1.txt');
         $file->moveTo('./file2.txt');

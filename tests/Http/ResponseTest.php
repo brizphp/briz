@@ -60,5 +60,4 @@ class ResponseTest extends PHPUnit_Framework_TestCase
         $this->setExpectedException('InvalidArgumentException');
         $response = $this->response->withStatus(2000);
     }
-
 }

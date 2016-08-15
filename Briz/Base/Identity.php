@@ -35,7 +35,7 @@ abstract class Identity implements IdentityInterface
      * @param mixed $value value to be checked
      * @return bool
      */
-    public abstract function identify($key, $value);
+    abstract public function identify($key, $value);
 
     /**
      * Register a new param to check identity.
@@ -71,7 +71,7 @@ abstract class Identity implements IdentityInterface
         if (isset($this->register[$component][$key])) {
             unset($this->register[$component][$key]);
         }
-        if(empty($this->register[$component])){
+        if (empty($this->register[$component])) {
             unset($this->register[$component]);
         }
     }
@@ -103,7 +103,6 @@ abstract class Identity implements IdentityInterface
     public function checkByComponent($component)
     {
         if (isset($this->register[$component])) {
-
             foreach ($this->register[$component] as $name => $key) {
                 foreach ($key as $value) {
                     if (!$this->identify($name, $value)) {
@@ -136,5 +135,4 @@ abstract class Identity implements IdentityInterface
         }
         return true;
     }
-
 }

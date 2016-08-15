@@ -30,7 +30,7 @@ class ControllerResolver
         $reflection = new \ReflectionClass($className);
         $object = $reflection->newInstanceWithoutConstructor();
 
-        $resolver = function($name, $value) use($reflection, $object) {
+        $resolver = function ($name, $value) use ($reflection,$object) {
             if ($reflection->hasProperty($name)) {
                 $property = $reflection->getProperty($name);
                 $property->setAccessible(true);
@@ -74,7 +74,7 @@ class ControllerResolver
         $className = self::$className;
         $reflection = new \ReflectionClass($className);
         $result = [];
-        $resolver = function($name, $value)use(&$result, $container) {
+        $resolver = function ($name, $value) use (&$result,$container) {
             array_push($result, $value);
         };
         try {
@@ -170,5 +170,4 @@ class ControllerResolver
             }
         }
     }
-
 }

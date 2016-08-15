@@ -156,7 +156,6 @@ class Stream implements StreamInterface
      */
     public function isWritable()
     {
-
         if (is_resource($this->stream)) {
             $uri = $this->getMetadata('uri');
             if (strpos($uri, 'php://') == 0) {
@@ -209,7 +208,6 @@ class Stream implements StreamInterface
      */
     public function isReadable()
     {
-
         if (is_resource($this->stream)) {
             $uri = $this->getMetadata('uri');
             if (strpos($uri, 'php://') == 0) {
@@ -264,7 +262,7 @@ class Stream implements StreamInterface
      */
     public function getContents()
     {
-        if (!is_resource($this->stream) or ( ($contents = stream_get_contents($this->stream)) === false)) {
+        if (!is_resource($this->stream) or (($contents = stream_get_contents($this->stream)) === false)) {
             throw new \RuntimeException('unable to get contents of stream');
         }
         return $contents;
@@ -320,5 +318,4 @@ class Stream implements StreamInterface
             return '';
         }
     }
-
 }

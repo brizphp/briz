@@ -14,7 +14,7 @@ class IdentityTraitTest extends \PHPUnit_Framework_TestCase
 {
 
     protected $container;
-    protected  $identity;
+    protected $identity;
     
     public function setUp()
     {
@@ -33,16 +33,16 @@ class IdentityTraitTest extends \PHPUnit_Framework_TestCase
     
     public function testAddIdentity()
     {
-        $this->identity->addIdentity('header', 'x-head','none');
-        $this->identity->addIdentity('header2', 'x-head','none');
+        $this->identity->addIdentity('header', 'x-head', 'none');
+        $this->identity->addIdentity('header2', 'x-head', 'none');
         $this->assertArrayHasKey('header', $this->identity->g());
         $this->assertArrayHasKey('header2', $this->identity->g());
     }
     
     public function testRemoveIdentity()
     {
-        $this->identity->addIdentity('header', 'x-head','none');
-        $this->identity->addIdentity('header', 'x-header','none');
+        $this->identity->addIdentity('header', 'x-head', 'none');
+        $this->identity->addIdentity('header', 'x-header', 'none');
         $this->identity->removeIdentity('header', 'x-head');
         $this->assertArrayHasKey('header', $this->identity->g());
         $this->identity->removeIdentity('header', 'x-header');
@@ -51,28 +51,28 @@ class IdentityTraitTest extends \PHPUnit_Framework_TestCase
     
     public function testRemoveAllIdentitty()
     {
-        $this->identity->addIdentity('header', 'x-head','none');
-        $this->identity->addIdentity('header', 'x-header','none');
-        $this->identity->addIdentity('header2', 'x-head','none');
+        $this->identity->addIdentity('header', 'x-head', 'none');
+        $this->identity->addIdentity('header', 'x-header', 'none');
+        $this->identity->addIdentity('header2', 'x-head', 'none');
         $this->identity->removeAllIdentity();
         $this->assertEmpty($this->identity->g());
         $this->assertEmpty($this->identity->x());
     }
     public function testRemoveAllIdentityName()
     {
-        $this->identity->addIdentity('header', 'x-head','none');
-        $this->identity->addIdentity('header', 'x-header','none');
-        $this->identity->addIdentity('header2', 'x-head','none');
+        $this->identity->addIdentity('header', 'x-head', 'none');
+        $this->identity->addIdentity('header', 'x-header', 'none');
+        $this->identity->addIdentity('header2', 'x-head', 'none');
         $this->identity->removeAllIdentity('header');
-        $this->assertArrayHasKey('header2',$this->identity->g() );
-        $this->assertArrayNotHasKey('header',$this->identity->g() );
+        $this->assertArrayHasKey('header2', $this->identity->g());
+        $this->assertArrayNotHasKey('header', $this->identity->g());
     }
     
     public function testIdentifyAll()
     {
-        $this->identity->addIdentity('header', 'x-head','none');
-        $this->identity->addIdentity('header', 'x-header','none');
-        $this->identity->addIdentity('header2', 'x-head','none');
+        $this->identity->addIdentity('header', 'x-head', 'none');
+        $this->identity->addIdentity('header', 'x-header', 'none');
+        $this->identity->addIdentity('header2', 'x-head', 'none');
         $this->assertFalse($this->identity->identifyAll());
         $this->identity->removeAllIdentity('header2');
         $this->assertTrue($this->identity->identifyAll());
@@ -80,26 +80,27 @@ class IdentityTraitTest extends \PHPUnit_Framework_TestCase
     
     public function testIdentifyByName()
     {
-        $this->identity->addIdentity('header', 'x-head','none');
-        $this->identity->addIdentity('header', 'x-header','none');
-        $this->identity->addIdentity('header2', 'x-head','none');
+        $this->identity->addIdentity('header', 'x-head', 'none');
+        $this->identity->addIdentity('header', 'x-header', 'none');
+        $this->identity->addIdentity('header2', 'x-head', 'none');
         $this->assertFalse($this->identity->identifyByName('header2'));
         $this->assertTrue($this->identity->identifyByName('header'));
-        $this->assertFalse($this->identity->identifyByName('header','key'));
+        $this->assertFalse($this->identity->identifyByName('header', 'key'));
     }
-
 }
 
 class TestCase
 {
 
     public $container;
-    public function g(){
+    public function g()
+    {
         return $this->identities;
     }
-    public function x(){
-    return $this->idt_keyIndex;
+    public function x()
+    {
+        return $this->idt_keyIndex;
     }
 
-use \Briz\Beam\IdentityTrait;
+    use \Briz\Beam\IdentityTrait;
 }

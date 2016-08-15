@@ -23,5 +23,4 @@ class JsonView extends BaseView
             return $this->response;
         }
     }
-
 }

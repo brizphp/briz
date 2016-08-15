@@ -22,5 +22,4 @@ class RouterCollection extends Collection
         $this->set($name, $router);
         return $router;
     }
-
 }

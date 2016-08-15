@@ -4,7 +4,7 @@
  * 
  * 
  */
-namespace Briz\Tests\Route;
+namespace Briz\tests\Route;
 
 /**
  * Description of BridgeRoutesTest

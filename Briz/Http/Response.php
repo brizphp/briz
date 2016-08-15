@@ -219,5 +219,4 @@ class Response extends Message implements ResponseInterface
         $this->headers = clone $this->headers;
         $this->body = clone $this->body;
     }
-
 }

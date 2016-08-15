@@ -4,7 +4,7 @@
  * 
  * 
  */
-namespace Briz\Tests\FileSystem;
+namespace Briz\tests\FileSystem;
 
 /**
  * Description of FileTest

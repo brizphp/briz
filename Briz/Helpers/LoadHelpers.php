@@ -35,41 +35,37 @@ class LoadHelpers
      * @param Interop\Container\ContainerInterface $container
      * @return bool whether the method is faked?.
      */
-    public static function fakeMethod($request,$mock,$container)
+    public static function fakeMethod($request, $mock, $container)
     {
         $headerLine = $request->getHeaderLine($mock);
-        if(!empty($headerLine)){
+        if (!empty($headerLine)) {
             $headers = explode(',', $headerLine);
-            try{
+            try {
                 $original = $request->getMethod();
                 $request = $request->withMethod($headers[0]);
                 $container['request'] = $request;
                 return $original;
-            }  catch (\Exception $e){
-                
+            } catch (\Exception $e) {
             }
-        }else{
+        } else {
             $body = $request->getParsedBody();
-            if($body === null){
+            if ($body === null) {
                 return null;
             }
-            if(is_object($body)){
+            if (is_object($body)) {
                 $body = json_encode($body);
-                $body = json_decode($body,true);
+                $body = json_decode($body, true);
             }
-            if(isset($body[$mock])){
-                try{
+            if (isset($body[$mock])) {
+                try {
                     $original = $request->getMethod();
                     $request = $request->withMethod($body[$mock]);
                     $container['request'] = $request;
                     return $original;
                 } catch (\Exception $ex) {
-                     
                 }
             }
             return null;
         }
-        
     }
-
 }

@@ -15,8 +15,8 @@ interface IdentityInterface
      * 
      *
      * @return bool
-     */ 
-    public function identify($key,$value);
+     */
+    public function identify($key, $value);
     
     /**
      * Register a new param to check identity
@@ -26,7 +26,7 @@ interface IdentityInterface
      * it should register identity with respect to a component name reprecenting 
      *    from where it is registered.
      */
-    public function addIdentity($component,$key,$value);
+    public function addIdentity($component, $key, $value);
     
     /**
      * Unregister a key from identity register
@@ -36,7 +36,7 @@ interface IdentityInterface
      * 
      * @param string $key 
      */
-    public function removeIdentity($component,$key);
+    public function removeIdentity($component, $key);
     
     /**
      * Unregister a component from identity register
@@ -57,7 +57,7 @@ interface IdentityInterface
      * @param string $key
      * @return bool 
      */
-    public function checkByKey($component,$key);
+    public function checkByKey($component, $key);
     
     /**
      * Check identity of all registered keys in a component.

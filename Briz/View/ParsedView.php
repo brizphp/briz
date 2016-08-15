@@ -19,14 +19,14 @@ class ParsedView extends BaseView
      */
     public function render($name, $params = [])
     {
-        if ((null !== $this->response) and ( null !== $this->file)) {
+        if ((null !== $this->response) and (null !== $this->file)) {
             $file_name = $this->viewPath . '.view.php';
 
             //check if the file exits in parent directory
             if (!file_exists($file_name)) {
                 if (null === $this->inherit->$name->parent) {
                     throw new \InvalidArgumentException(
-                        sprintf("View file '%s' not found in %s", 
+                        sprintf("View file '%s' not found in %s",
                             $this->file.'.view.php',
                             $this->rootDir.'/'.$this->viewDir.'/'.$name));
                 }
@@ -34,7 +34,7 @@ class ParsedView extends BaseView
                 $this->setFile($this->rootDir, $this->viewDir, $name, $this->file);
                 return $this->render($name, $params);
             }
-            $body = function() use($params, $file_name) {
+            $body = function () use ($params,$file_name) {
                 try {
                     ob_start();
                     if (is_object($params)) {
@@ -55,5 +55,4 @@ class ParsedView extends BaseView
             return $this->response;
         }
     }
-
 }

@@ -82,10 +82,10 @@ class LoadDefaults
                 $header[substr($name, 5)] = $value;
             }
         }
-        if(!isset($header['CONTENT_TYPE'])){
+        if (!isset($header['CONTENT_TYPE'])) {
             $header['CONTENT_TYPE'] = $server->get('CONTENT_TYPE');
         }
-        if(!isset($header['CONTENT_TYPE'])){
+        if (!isset($header['CONTENT_TYPE'])) {
             $header['CONTENT_LENGTH'] = $server->get('CONTENT_LENGTH');
         }
         $header['PHP_AUTH_USER'] = $server->get('PHP_AUTH_USER');
@@ -131,5 +131,4 @@ class LoadDefaults
         $response = new Response();
         return $response;
     }
-
 }

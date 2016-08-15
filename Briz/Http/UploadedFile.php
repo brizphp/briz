@@ -61,8 +61,7 @@ class UploadedFile implements UploadedFileInterface
      * @param bool $sapi is file is in sapi environment
      */
     public function __construct($file = null, $size = null, $error = UPLOAD_ERR_NO_FILE, $name = null, $type = null, $sapi = false
-    )
-    {
+    ) {
         $this->file = $file;
         $this->size = isset($size) ? (int) $size : null;
         $this->error = $error;
@@ -246,5 +245,4 @@ class UploadedFile implements UploadedFileInterface
         }
         return $message;
     }
-
 }

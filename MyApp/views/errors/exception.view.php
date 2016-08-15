@@ -40,13 +40,13 @@
 
 Backtrace:
 <?php	foreach ($exception->getTrace() as $error): ?>
-<?php		if (isset($error['file'])): ?>
+<?php	    if (isset($error['file'])): ?>
     <p class="br_err_backtrace">
 	File: <?php echo $error['file']; ?><br/>
 	Line: <?php echo $error['line']; ?><br/>
 	Function: <?php echo $error['function']; ?><br/>
     </p>
-<?php		endif ?>
+<?php	    endif ?>
 <?php	endforeach ?>
 </div></div>
 </body>

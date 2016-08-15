@@ -122,7 +122,6 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     {
         return $this->getMockBuilder('Briz\Http\Stream')->disableOriginalConstructor()->getMock();
     }
-
 }
 
 class Message extends \Briz\Http\Message
@@ -131,5 +130,4 @@ class Message extends \Briz\Http\Message
     public $protocolVersion;
     public $headers;
     public $body;
-
 }

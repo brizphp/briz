@@ -8,5 +8,4 @@ use Briz\Base\Interfaces\CollectionInterface;
  */
 interface HeadersInterface extends CollectionInterface
 {
-    
 }

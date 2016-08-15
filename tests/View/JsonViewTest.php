@@ -3,7 +3,7 @@
  * 
  * 
  */
-namespace Briz\Tests\View;
+namespace Briz\tests\View;
 
 /**
  * Description of JsonViewTest
@@ -21,5 +21,4 @@ class JsonViewTest extends \PHPUnit_Framework_TestCase
         $response = $render->render('', ['hello' => 'a']);
         $this->assertEquals(['hello' => 'a'], json_decode((string) $response->getBody(), true));
     }
-
 }

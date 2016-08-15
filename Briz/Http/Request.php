@@ -91,8 +91,7 @@ class Request extends Message implements ServerRequestInterface
      */
     public function __construct(
     $method, UriInterface $uri, HeadersInterface $headers, StreamInterface $body, ServerParamsInterface $params, array $cookie, array $uplodedFiles = [], $version = "1.1", array $attributes = []
-    )
-    {
+    ) {
         $this->method = $this->validateMethod($method);
         $this->uri = $uri;
         $this->protocolVersion = $this->validateVersion($version);
@@ -127,7 +126,7 @@ class Request extends Message implements ServerRequestInterface
         }
         $query = $this->uri->getQuery();
         $target = $this->uri->getPath() .
-                ( $query ? '?' . $query : '');
+                ($query ? '?' . $query : '');
 
         if ($target === '') {
             $target = '/';
@@ -564,5 +563,4 @@ class Request extends Message implements ServerRequestInterface
         $this->attributes = clone $this->attributes;
         $this->body = clone $this->body;
     }
-
 }

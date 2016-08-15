@@ -8,5 +8,4 @@ use Briz\Base\Interfaces\CollectionInterface;
  */
 interface ServerParamsInterface extends CollectionInterface
 {
-    
 }

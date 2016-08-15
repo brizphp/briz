@@ -24,7 +24,7 @@ class Route extends RouteCollector
         $name,
         $generatorType = 'FastRoute\\DataGenerator\\GroupCountBased',
         $dispatcherType = 'FastRoute\\Dispatcher\\GroupCountBased'
-    ){
+    ) {
         $routeParser = new Std();
         $dataGenerator = new $generatorType;
         $this->dispatcher = $dispatcherType;
@@ -45,5 +45,4 @@ class Route extends RouteCollector
         array_push($routeInfo, $renderer);
         return $routeInfo;
     }
-
 }

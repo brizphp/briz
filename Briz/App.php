@@ -130,7 +130,6 @@ class App
      */
     public function route($name, $handler, $parent = null, array $args = [])
     {
-
         if (!is_string($name)) {
             throw new \InvalidArgumentException("Route name must be string");
         }
@@ -153,7 +152,7 @@ class App
             $pl = $rf->getMethod('_setup');
             $pl->setAccessible(true);
             $cache = ($this->container->has('cache_route')) ? $this->container->get('cache_route') : false;
-            $pl->invoke($router, $args,$cache);
+            $pl->invoke($router, $args, $cache);
             $this->container->get('routes')->set($name, $router);
             if (is_callable($handler)) {
                 $handler($router);
@@ -437,7 +436,6 @@ class App
      */
     private function initializeErrorHandler()
     {
-
         $errorHandler = function ($severity, $message, $file, $line) {
             $levelStrings = array(
                 E_ERROR => 'E_ERROR',
@@ -531,7 +529,7 @@ class App
             }
         };
         set_exception_handler($exceptionHandler);
-        $shutdownHandler = function ()use($errorHandler) {
+        $shutdownHandler = function () use ($errorHandler) {
             $last_error = error_get_last();
             if (isset($last_error) &&
                     ($last_error['type'] & (E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING))) {
@@ -557,5 +555,4 @@ class App
         }
         return true;
     }
-
 }

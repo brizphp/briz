@@ -30,16 +30,13 @@ class HeaderIdentity extends Identity
             foreach ($key as $values) {
                 //test if key is availabe in comma seperated values or directly
                 $values = explode(',', $values);
-                foreach ($values as $val){
+                foreach ($values as $val) {
                     if ($value == trim($val)) {
-                    return true;
-                }
+                        return true;
+                    }
                 }
             }
-            
-            
         }
         return false;
     }
-
 }

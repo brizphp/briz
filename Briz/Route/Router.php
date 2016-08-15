@@ -120,7 +120,7 @@ class Router
      * @param string $pattern the url pattern to be matched
      * @param string|callable $callback
      */
-    public function put($pattern,$callback)
+    public function put($pattern, $callback)
     {
         $this->set(['PUT'], $pattern, $callback);
     }
@@ -332,5 +332,4 @@ class Router
             return $this->bridge;
         }
     }
-
 }

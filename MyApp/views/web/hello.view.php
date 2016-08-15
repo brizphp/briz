@@ -22,8 +22,8 @@ body {
 </head>
 <body><h2 style="">
 <?php
-if(isset($title)){
-echo $title; 
+if (isset($title)) {
+    echo $title;
 } ?></h2>
 <br>
 <p>

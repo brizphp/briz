@@ -5,18 +5,20 @@
  * 
  */
 
-namespace Briz\Tests\Http;
+namespace Briz\tests\Http;
 
 /**
  * Description of UriTest
  *
  * @author haseeb
  */
-class UriTest extends \PHPUnit_Framework_TestCase{
+class UriTest extends \PHPUnit_Framework_TestCase
+{
     
     protected $uri;
     
-    public function setUp() {
+    public function setUp()
+    {
         $this->uri = new \Briz\Http\Uri(
                 "http",
                 'example.com',
@@ -24,7 +26,7 @@ class UriTest extends \PHPUnit_Framework_TestCase{
                 'a=b&b=c',
                 'title',
                 8080,
-                'haseeb', 
+                'haseeb',
                 'nosecret'
                 );
     }

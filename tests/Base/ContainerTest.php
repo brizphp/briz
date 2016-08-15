@@ -3,7 +3,7 @@
  * 
  * 
  */
-namespace Briz\Tests\Base;
+namespace Briz\tests\Base;
 
 /**
  * Description of ContainerTest
@@ -18,7 +18,7 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
         $container['name'] = 'value';
         $this->assertFalse($container->has('not'));
         $this->assertTrue($container->has('name'));
-        $this->assertEquals('value',$container->get('name'));
+        $this->assertEquals('value', $container->get('name'));
     }
     
     public function testException()

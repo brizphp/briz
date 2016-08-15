@@ -41,9 +41,9 @@ class HeaderIdentityTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->identity->checkByKey('another', 'x-head'));
         $this->assertTrue($this->identity->checkByComponent('another'));
     }
-    
 }
 
-class HeaderIdentity extends \Briz\Beam\HeaderIdentity{
+class HeaderIdentity extends \Briz\Beam\HeaderIdentity
+{
     public $container;
 }

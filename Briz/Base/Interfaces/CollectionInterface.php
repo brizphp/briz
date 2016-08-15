@@ -13,7 +13,7 @@ interface CollectionInterface
      * @param string $key
      * @param mixed $value
      */
-    public function set($key,$value);
+    public function set($key, $value);
     
     /**
      * Get a value for a key

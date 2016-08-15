@@ -3,6 +3,7 @@ namespace Briz\Http\Collections;
 
 use Briz\Base\Collection;
 use Briz\Http\Collections\Interfaces\ServerParamsInterface;
+
 /**
  * Collection reprecenting $_SERVER.
  */
@@ -19,5 +20,4 @@ class ServerParams extends Collection implements ServerParamsInterface
     {
         return parent::get($key, $default);
     }
-
 }

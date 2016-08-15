@@ -61,5 +61,4 @@ abstract class BController
     {
         return $this->briz->show404();
     }
-
 }

@@ -1,10 +1,11 @@
 <?php
 
-namespace Briz\Tests\Base;
+namespace Briz\tests\Base;
 
 use Briz\Base\Collection;
 
-Class CollectionTest extends \PHPUnit_Framework_TestCase {
+class CollectionTest extends \PHPUnit_Framework_TestCase
+{
 
     /**
      * @var Collection 
@@ -16,13 +17,15 @@ Class CollectionTest extends \PHPUnit_Framework_TestCase {
      */
     private $property;
 
-    public function setUp() {
+    public function setUp()
+    {
         $this->collection = new Collection();
         $this->property = new \ReflectionProperty($this->collection, 'items');
         $this->property->setAccessible(true);
     }
 
-    public function testConstruct() {
+    public function testConstruct()
+    {
         $data = ['foo' => 'bar'];
         $bag = new Collection($data);
         $bagProperty = new \ReflectionProperty($bag, 'items');
@@ -65,7 +68,7 @@ Class CollectionTest extends \PHPUnit_Framework_TestCase {
     {
         $data = ['foo'=>'bar','data1'=>'data2','user'=>'abc1'];
         $this->property->setValue($this->collection, $data);
-        $this->assertFalse($this->collection->has('none')); 
+        $this->assertFalse($this->collection->has('none'));
         $this->assertTrue($this->collection->has('data1'));
     }
     
@@ -100,8 +103,7 @@ Class CollectionTest extends \PHPUnit_Framework_TestCase {
     
     public function testSet()
     {
-        $this->collection->set('abcd','a');
+        $this->collection->set('abcd', 'a');
         $this->assertArrayHasKey('abcd', $this->property->getValue($this->collection));
     }
-
 }
